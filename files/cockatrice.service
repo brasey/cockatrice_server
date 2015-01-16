@@ -10,9 +10,9 @@ Group=cockatrice
 WorkingDirectory=/srv/cockatrice
 ExecStart=/usr/local/bin/servatrice
 Restart=on-failure
-StartLimitInterval=5min
-StartLimitBurst=4
-StartLimitAction=reboot-force
+#StartLimitInterval=5min
+#StartLimitBurst=4
+#StartLimitAction=reboot-force
 
 # Give a reasonable amount of time for the server to start up/shut down
 TimeoutSec=60
