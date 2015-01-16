@@ -1,6 +1,5 @@
 class cockatrice_server {
 
-  include epel
   requires cockatrice_server::users
 
   package { [
