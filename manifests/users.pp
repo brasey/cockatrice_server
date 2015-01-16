@@ -6,9 +6,11 @@ class cockatrice_server::users {
 
   user { 'cockatrice':
     ensure    => present,
+    groups    => [ 'cockatrice' ],
     comment   => 'Cockatrice service account',
     password  => '!',
     shell     => '/sbin/nologin',
+    require   => Group[ 'cockatrice' ],
   }
 
 }
