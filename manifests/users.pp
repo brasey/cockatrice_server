@@ -11,6 +11,4 @@ class cockatrice_server::users {
     shell     => '/sbin/nologin',
   }
 
-  users { 'cockatrice': }
-
 }
