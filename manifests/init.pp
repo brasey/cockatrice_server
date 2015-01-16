@@ -1,6 +1,6 @@
 class cockatrice_server {
 
-  requires cockatrice_server::users
+  require cockatrice_server::users
 
   package { [
               'gcc',
