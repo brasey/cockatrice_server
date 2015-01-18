@@ -32,6 +32,7 @@ class cockatrice_server::db {
     host      => 'localhost',
     grant     => 'ALL',
     sql       => '/root/db_setup.sql',
+    require   => Concat::Fragment[ 'add admin wui user' ],
   }
 
 }
