@@ -9,8 +9,10 @@ class cockatrice_server::params {
     }
   }
 
+  $server_name      = hiera('server_name', 'Cockatrice server')
   $port             = hiera('port', '4747')
   $service_user     = hiera('service_user', 'cockatrice')
+  $db_name          = hiera('db_name', 'cockatrice')
   $db_root_password = hiera('db_root_password', 'password')
   $db_user          = hiera('db_user', 'cockatrice')
   $db_password      = hiera('db_password', 'cockatrice')

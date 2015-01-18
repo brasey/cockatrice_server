@@ -27,7 +27,7 @@ class cockatrice_server::db {
     order   => '02',
   }
 
-  mysql::db { 'cockatrice':
+  mysql::db { $cockatrice_server::params::db_name:
     user      => $cockatrice_server::params::db_user,
     password  => $cockatrice_server::params::db_password,
     host      => 'localhost',

@@ -4,6 +4,7 @@ class cockatrice_server::prereqs {
               'gcc',
               'gcc-c++',
               'qt-devel',
+              'qt-mysql',
               'git',
               'protobuf-devel',
               'protobuf-compiler',
