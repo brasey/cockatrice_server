@@ -10,7 +10,7 @@ class cockatrice_server::service {
     group       => 'cockatrice',
     mode        => '0644',
     source      => 'puppet:///modules/cockatrice_server/servatrice.ini',
-    notify      => Cockatrice_server::Service[ 'cockatrice' ],
+    notify      => Service[ 'cockatrice' ],
   }
 
 # And a systemd service file to make it go and stop
