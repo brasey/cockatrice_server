@@ -6,9 +6,9 @@ class cockatrice_server::service {
 
   file { '/etc/servatrice/servatrice.ini':
     ensure      => file,
-    owner       => 'cockatrice',
-    group       => 'cockatrice',
-    mode        => '0644',
+    owner       => $cockatrice_server::params::service_user,
+    group       => $cockatrice_server::params::service_user,
+    mode        => '0600',
     source      => 'puppet:///modules/cockatrice_server/servatrice.ini',
     notify      => Service[ 'cockatrice' ],
   }

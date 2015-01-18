@@ -1,6 +1,7 @@
 class cockatrice_server::db {
 
   require cockatrice_server::build
+  require cockatrice_server::params
 
   class { '::mysql::server':
     root_password     => 'new-password',
@@ -27,8 +28,8 @@ class cockatrice_server::db {
   }
 
   mysql::db { 'cockatrice':
-    user      => 'cockatrice',
-    password  => 'cockatrice',
+    user      => $cockatrice_server::params::db_user,
+    password  => $cockatrice_server::params::db_password,
     host      => 'localhost',
     grant     => 'ALL',
     sql       => '/root/db_setup.sql',

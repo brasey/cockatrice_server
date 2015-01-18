@@ -18,7 +18,7 @@ class cockatrice_server::build {
   }
 
   exec { 'run cmake':
-    command => '/usr/bin/cmake -DWITH_SERVER=1 -DWITH_CLIENT=0 -DWITH_ORACLE=1 -DWITH_QT4=1 ..',
+    command => "${cockatrice_server::params::cmake} -DWITH_SERVER=1 -DWITH_CLIENT=0 -DWITH_ORACLE=1 -DWITH_QT4=1 ..",
     cwd     => '/usr/local/src/cockatrice/build',
     user    => 'root',
     creates => '/usr/local/src/cockatrice/build/Makefile',
@@ -26,7 +26,7 @@ class cockatrice_server::build {
   }
 
   exec { 'run make':
-    command => '/usr/bin/make',
+    command => $cockatrice_server::params::make,
     cwd     => '/usr/local/src/cockatrice/build',
     user    => 'root',
     creates => '/usr/local/src/cockatrice/build/servatrice/servatrice',
@@ -34,7 +34,7 @@ class cockatrice_server::build {
   }
 
   exec { 'run make install':
-    command => '/usr/bin/make install',
+    command => "${cockatrice_server::params::make} install",
     cwd     => '/usr/local/src/cockatrice/build',
     user    => 'root',
     creates => '/usr/local/bin/servatrice',

@@ -1,16 +1,18 @@
 class cockatrice_server::users {
 
-  group { 'cockatrice':
+  require cockatrice_server::params
+
+  group { $cockatrice_server::params::service_user:
     ensure  => present,
   }
 
-  user { 'cockatrice':
+  user { $cockatrice_server::params::service_user:
     ensure    => present,
-    groups    => [ 'cockatrice' ],
+    groups    => [ $cockatrice_server::params::service_user ],
     comment   => 'Cockatrice service account',
     password  => '!',
     shell     => '/sbin/nologin',
-    require   => Group[ 'cockatrice' ],
+    require   => Group[ $cockatrice_server::params::service_user ],
   }
 
 }

@@ -1,6 +1,7 @@
 class cockatrice_server::directories {
 
   require cockatrice_server::users
+  require cockatrice_server::params
 
   file { '/usr/local/src/cockatrice':
     ensure  => directory,
@@ -11,8 +12,8 @@ class cockatrice_server::directories {
 
   file { '/srv/cockatrice':
     ensure  => directory,
-    owner   => 'cockatrice',
-    group   => 'cockatrice',
+    owner   => $cockatrice_server::params::service_user,
+    group   => $cockatrice_server::params::service_user,
     mode    => '0775',
   }
 
