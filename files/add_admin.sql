@@ -1,0 +1,1 @@
+insert into cockatrice.cockatrice_users (admin,name,password_sha512,active) values (1,'cockatrice','jbB4kSWDmjaVzMNdU13n73SpdBCJTCJ/JYm5ZBZvfxlzbISbXir+e/aSvMz86KzOoaBfidxO0s6GVd8t00qC0TNPl+udHfECaF7MsA==',1);
