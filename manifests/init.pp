@@ -20,14 +20,4 @@ class cockatrice_server {
     },]
   }
 
-# And a systemd service file to make it go and stop
-
-  file { '/usr/lib/systemd/system/cockatrice.service':
-    ensure      => file,
-    owner       => 'root',
-    group       => 'root',
-    mode        => '0644',
-    source      => 'puppet:///modules/cockatrice_server/cockatrice.service',
-  }
-
 }
