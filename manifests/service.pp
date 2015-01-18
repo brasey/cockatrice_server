@@ -28,7 +28,7 @@ class cockatrice_server::service {
     enable      => true,
     hasstatus   => true,
     hasrestart  => true,
-    require     => File[ '/srv/cockatrice/servatrice.ini',
+    require     => File[ '/etc/servatrice/servatrice.ini',
                           '/usr/lib/systemd/system/cockatrice.service' ],
   }
 

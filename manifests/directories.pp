@@ -16,4 +16,11 @@ class cockatrice_server::directories {
     mode    => '0775',
   }
 
+  file { '/etc/servatrice':
+    ensure  => directory,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0775',
+  }
+
 }
