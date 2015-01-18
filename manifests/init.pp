@@ -4,6 +4,7 @@ class cockatrice_server {
   require cockatrice_server::directories
   require cockatrice_server::prereqs
   include cockatrice_server::db
+  include cockatrice_server::service
 
 # Open a port in the firewall
 
