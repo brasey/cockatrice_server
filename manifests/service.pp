@@ -9,7 +9,7 @@ class cockatrice_server::service {
     owner       => $cockatrice_server::params::service_user,
     group       => $cockatrice_server::params::service_user,
     mode        => '0600',
-    source      => 'puppet:///modules/cockatrice_server/servatrice.ini',
+    content     => template('cockatrice_server/servatrice.ini.erb'),
     notify      => Service[ 'cockatrice' ],
   }
 

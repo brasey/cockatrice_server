@@ -21,10 +21,19 @@ class cockatrice_server::db {
     order   => '01',
   }
 
+  file { '/root/add_admin.sql':
+    ensure  => file,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0600',
+    content => template('cockatrice_server/add_admin.sql.erb'),
+  }
+
   concat::fragment { 'add admin wui user':
     target  => '/root/db_setup.sql',
-    source  => 'puppet:///modules/cockatrice_server/add_admin.sql',
+    source  => '/root/add_admin.sql',
     order   => '02',
+    require => File[ '/root/add_admin.sql' ],
   }
 
   mysql::db { $cockatrice_server::params::db_name:
