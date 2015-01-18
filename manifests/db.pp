@@ -2,14 +2,8 @@ class cockatrice_server::db {
 
   require cockatrice_server::build
 
-  $override_options = {
-    'server' => {
-      root_password => 'new-password',
-    }
-  }
-
   class { '::mysql::server':
-    override_options  => $override_options,
+    root_password     => 'new-password',
     service_enabled   => true,
     service_manage    => true,
   }
