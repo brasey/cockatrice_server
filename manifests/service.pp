@@ -4,7 +4,7 @@ class cockatrice_server::service {
 
 # Place server config file
 
-  file { '/srv/cockatrice/servatrice.ini':
+  file { '/etc/servatrice/servatrice.ini':
     ensure      => file,
     owner       => 'cockatrice',
     group       => 'cockatrice',
