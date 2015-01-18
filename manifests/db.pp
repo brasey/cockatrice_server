@@ -11,7 +11,7 @@ class cockatrice_server::db {
   class { '::mysql::server':
     override_options  => $override_options,
     service_enabled   => true,
-    service_managed   => true,
+    service_manage    => true,
   }
 
   concat { '/root/db_setup.sql':
